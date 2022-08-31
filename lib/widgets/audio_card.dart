@@ -1,54 +1,45 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:relax_app/widgets/control_button.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AudioCard extends StatelessWidget {
   final String label;
   final IconData icon;
-  final String audioName;
-  const AudioCard({
+  final Widget button;
+
+  AudioCard({
     Key? key,
     required this.label,
     required this.icon,
-    required this.audioName,
+    required this.button,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 2,
+      color: Colors.green[200],
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      elevation: 0,
       child: Padding(
-        padding: const EdgeInsets.only(right: 10, left: 10),
+        padding: const EdgeInsets.only(right: 20, left: 20),
         child: SizedBox(
           height: 100,
           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
+                FaIcon(
                   icon,
-                  size: 50,
+                  size: 40,
+                  color: Colors.grey[900],
                 ),
-                Text(label)
+                Text(
+                  label,
+                  style: TextStyle(color: Colors.grey[900]),
+                )
               ],
             ),
             const Spacer(),
-            ControlButton(
-              icon: Icons.play_arrow,
-              onPressed: () async {
-                final player = AudioPlayer(playerId: audioName);
-                await player.play(AssetSource('sounds/$audioName.mp3'));
-
-                // player.play(source)
-              },
-            ),
-            ControlButton(
-              icon: Icons.stop,
-              onPressed: () async {
-                final player = AudioPlayer(playerId: audioName);
-                await player.stop();
-              },
-            ),
+            button
           ]),
         ),
       ),
