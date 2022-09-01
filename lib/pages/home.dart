@@ -12,12 +12,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[850],
@@ -39,9 +33,8 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Consumer<AudioCardListProvider>(builder: (context, value, child) {
         return ListView(
-          padding: const EdgeInsets.all(10),
-          children: value.widgets,
-        );
+            padding: const EdgeInsets.all(10),
+            children: value.widgets.values.toList());
       }),
     );
   }

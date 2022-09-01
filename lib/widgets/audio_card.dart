@@ -6,7 +6,7 @@ class AudioCard extends StatelessWidget {
   final IconData icon;
   final Widget button;
 
-  AudioCard({
+  const AudioCard({
     Key? key,
     required this.label,
     required this.icon,

@@ -14,29 +14,25 @@ class ControlButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (BuildContext context) => ControlButtonProvider(),
-      child: Consumer<ControlButtonProvider>(
-          builder: (context, value, child) => ElevatedButton(
-              onPressed: () async {
-                final player = AudioPlayer(playerId: audioName);
-                player.setReleaseMode(ReleaseMode.loop);
-                if (value.isPlay == false) {
-                  await player.play(AssetSource('sounds/$audioName.mp3'));
-                  value.isPlay = true;
-                } else {
-                  await player.stop();
-                  value.isPlay = false;
-                }
-              },
-              style: ElevatedButton.styleFrom(
-                  elevation: 0,
-                  primary: Colors.grey[900],
-                  shape: const CircleBorder(),
-                  padding: const EdgeInsets.all(15)),
-              child: Icon(
-                (value.isPlay == true) ? Icons.stop : Icons.play_arrow,
-                color: Colors.green[200],
-              ))),
-    );
+        create: (BuildContext context) => ControlButtonProvider(),
+        child: Consumer<ControlButtonProvider>(
+            builder: (context, value, child) => ElevatedButton(
+                onPressed: () async {
+                  final player = AudioPlayer(playerId: audioName);
+                  player.setReleaseMode(ReleaseMode.loop);
+                  if (value.isPlay == false) {
+                    await player.play(AssetSource('sounds/$audioName.mp3'));
+                    value.isPlay = true;
+                  } else {
+                    await player.stop();
+                    value.isPlay = false;
+                  }
+                },
+                style: ElevatedButton.styleFrom(
+                    elevation: 0,
+                    primary: Colors.grey[900],
+                    shape: const CircleBorder(),
+                    padding: const EdgeInsets.all(15)),
+                child: Icon(value.iconPlay))));
   }
 }

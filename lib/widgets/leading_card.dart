@@ -8,6 +8,7 @@ class LeadingCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      margin: const EdgeInsets.only(bottom: 10),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       child: Stack(
         alignment: AlignmentDirectional.center,
@@ -27,7 +28,7 @@ class LeadingCard extends StatelessWidget {
                 color: Colors.black.withOpacity(0.2)),
           ),
           Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             height: 200,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

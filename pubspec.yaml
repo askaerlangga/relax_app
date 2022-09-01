@@ -66,6 +66,7 @@ flutter:
     - assets/sounds/bird.mp3
     - assets/sounds/fire.mp3
     - assets/sounds/rain.mp3
+    - assets/sounds/wind.mp3
     - assets/images/background.jpg
   #   - images/a_dot_ham.jpeg
 

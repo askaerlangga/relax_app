@@ -10,14 +10,5 @@ class ControlButtonProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  IconData get iconPlay => (_isPlay) ? Icons.play_arrow : Icons.stop;
-
-  bool _isAddButton = false;
-  bool get isAddButton => _isAddButton;
-  set isAddButton(bool value) {
-    _isAddButton = value;
-    notifyListeners();
-  }
-
-  IconData get iconAdd => (_isAddButton) ? Icons.delete : Icons.add;
+  IconData get iconPlay => (_isPlay) ? Icons.stop : Icons.play_arrow;
 }
