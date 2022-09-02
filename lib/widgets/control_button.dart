@@ -33,6 +33,9 @@ class ControlButton extends StatelessWidget {
                     primary: Colors.grey[900],
                     shape: const CircleBorder(),
                     padding: const EdgeInsets.all(15)),
-                child: Icon(value.iconPlay))));
+                child: Icon(
+                  value.iconPlay,
+                  color: Colors.green[200],
+                ))));
   }
 }

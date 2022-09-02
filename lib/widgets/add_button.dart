@@ -38,9 +38,10 @@ class AddButton extends StatelessWidget {
               primary: Colors.grey[900],
               shape: const CircleBorder(),
               padding: const EdgeInsets.all(15)),
-          child: Icon((value.widgets.containsKey(audioName))
-              ? Icons.delete
-              : Icons.add));
+          child: Icon(
+            (value.widgets.containsKey(audioName)) ? Icons.delete : Icons.add,
+            color: Colors.green[200],
+          ));
     });
   }
 }
