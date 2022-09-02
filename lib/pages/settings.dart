@@ -5,14 +5,9 @@ import 'package:relax_app/providers/audio_card_list_provider.dart';
 import 'package:relax_app/widgets/add_button.dart';
 import 'package:relax_app/widgets/audio_card.dart';
 
-class SettingsPage extends StatefulWidget {
+class SettingsPage extends StatelessWidget {
   const SettingsPage({Key? key}) : super(key: key);
 
-  @override
-  State<SettingsPage> createState() => _SettingsPageState();
-}
-
-class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
